@@ -8,7 +8,6 @@ mit
 
 ### Application
 
-Feature: 
 -> Book:
 
     - Add book by manuall entry
