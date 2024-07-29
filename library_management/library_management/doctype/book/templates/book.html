@@ -1,0 +1,25 @@
+{% extends "templates/web.html" %} {% block page_content %}
+
+<div>
+	<h3 class="my-4">{{ title |e }}</h3>
+	<div class="row border border-1 p-5">
+		<div class="col-4">
+			<img src="{{ image }}" class="mb-3" />
+		</div>
+		<div class="col-6">
+			<div><span class="font-weight-bolder">Author: </span> {{author}}</div>
+			<div><span class="font-weight-bolder">Publisher: </span> {{publisher}}</div>
+			<div><span class="font-weight-bolder">Pages: </span> {{pages}}</div>
+			<div><span class="font-weight-bolder">ISBN: </span> {{isbn}}</div>
+			<div><span class="font-weight-bolder">Books Available: </span> {{quantity}}</div>
+		</div>
+		<div class="col-6">
+			<div><span class="font-weight-bolder">Description: </span></div>
+			{{description}}
+		</div>
+	</div>
+</div>
+
+{% endblock %}
+
+<!-- this is a sample default web page template -->
