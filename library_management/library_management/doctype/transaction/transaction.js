@@ -12,7 +12,7 @@ frappe.ui.form.on("Transaction", {
 		}
 	},
 	refresh(frm) {
-		// TODO
+		// TODO: Process to do on refresh
 	},
 	late_fee(frm) {
 		frm.set_value("total_fee", frm.doc.late_fee + frm.doc.fee);

@@ -47,8 +47,8 @@ frappe.listview_settings['Book'] = {
         frm.page.add_inner_button("Import Books", function() {
             ButtonFunction()
        });;
-   },
-   onload: function(listview) {
-	debugger;
+    },
+    onload: function(listview) {
+        // TODO: Process to do on DOM load
     }
 };

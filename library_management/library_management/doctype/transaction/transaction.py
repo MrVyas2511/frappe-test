@@ -9,9 +9,15 @@ from datetime import datetime
 class Transaction(Document):
 
     def before_save(self):
+        # Validate the fields
         self.validate_stock()
         self.validate_debt()
         self.type == "Issue"
+
+        # Change the status of book to occcupied
+        self.issue_book()
+
+    def issue_book(self):
         book = frappe.get_doc("Book", self.book)
         book.status = "Issued"
         book.save()

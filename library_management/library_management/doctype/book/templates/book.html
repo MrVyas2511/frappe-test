@@ -3,21 +3,28 @@
 <div>
 	<h3 class="my-4">{{ title |e }}</h3>
 	<div class="row border border-1 p-5">
-		<div class="col-4">
+		<div class="col-3">
 			<img src="{{ image }}" class="mb-3" />
 		</div>
 		<div class="col-6">
-			<div><span class="font-weight-bolder">Author: </span> {{author}}</div>
-			<div><span class="font-weight-bolder">Publisher: </span> {{publisher}}</div>
-			<div><span class="font-weight-bolder">Pages: </span> {{pages}}</div>
-			<div><span class="font-weight-bolder">ISBN: </span> {{isbn}}</div>
-			<div><span class="font-weight-bolder">Books Available: </span> {{quantity}}</div>
+			<div class="my-1"><span class="font-weight-bolder">Author: </span> {{author}}</div>
+			<div class="my-1"><span class="font-weight-bolder">Publisher: </span> {{publisher}}</div>
+			<div class="my-1"><span class="font-weight-bolder">Pages: </span> {{pages}}</div>
+			<div class="my-1"><span class="font-weight-bolder">ISBN: </span> {{isbn}}</div>
+			<div class="my-1"><span class="font-weight-bolder">Books Available: </span> {{status}}</div>
 		</div>
-		<div class="col-6">
-			<div><span class="font-weight-bolder">Description: </span></div>
+		<div class="col-8">
+			<div class="my-2""><span class="font-weight-bolder">Description: </span></div>
 			{{description}}
 		</div>
 	</div>
+
+	<!-- TODO: List out all the transaction done for this book. -->
+	<h3>Transaction:</h3>
+	{% set transaction = frappe.get_list("Transaction", fields=["member", "book"], filters={"book": doc.name}) %}
+	{% for row in transaction %}
+	<div> {{ row.member }}</div>
+	{% endfor %}
 </div>
 
 {% endblock %}

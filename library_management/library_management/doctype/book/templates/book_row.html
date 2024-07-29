@@ -1,19 +1,18 @@
 <div>
-	<!-- <h1 class="text-center"> doc </h1> -->
 	<div class="my-3">
 		<div class="card">
 			<div class="card-header">
 				<span>ISBN: </span>{{ (doc.isbn) |e }}
 			</div>
 			<div class="card-body row">
-			  <img class="img img-rounded col-2" src="{{doc.image}}"/>
+			  <img class="img img-rounded col-1" src="{{doc.image}}"/>
 				<div class="col-10">
 					<h5 class="card-title">{{ (doc.title or doc.name) |e }}</h5>
 					<p class="card-text">{{ (doc.author) |e }}</p>
 					<a href="/{{ doc.route |e }}" class="btn btn-primary"> More Details</a>
 				</div>
 			</div>
-		  </div>
+		</div>
 	</div>
 </div>
 <!-- this is a sample default list template -->

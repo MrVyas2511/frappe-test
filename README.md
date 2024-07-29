@@ -14,7 +14,7 @@ mit
 
     - Add book from API with various search option
 
--> Member: 
+-> Member:
 
     - Add Member entry manually
 

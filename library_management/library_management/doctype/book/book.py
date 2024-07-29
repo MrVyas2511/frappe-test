@@ -11,7 +11,6 @@ class Book(WebsiteGenerator):
 @frappe.whitelist()
 def import_books_from_api(isbn="", book_title="", authors=""):
     url = f"https://frappe.io/api/method/frappe-library"
-    print("count"+url)
     response = requests.get(url,
 		params={
 			'isbn':isbn,
@@ -32,8 +31,8 @@ def create_book_record(book):
             "title": book["title"],
             "author": book["authors"],
             "publisher": book["publisher"],
-            # "pages": book["num_pages"],
-            "quantity": book_doc.quantity + 1
+            "pages": book["num_pages"],
+            "status": "Available"
         })
         book_doc.save()
     else:
@@ -43,6 +42,6 @@ def create_book_record(book):
             "author": book["authors"],
             "isbn": book["isbn"],
             "publisher": book["publisher"],
-            # "pages": book["num_pages"],
-            "quantity": 1
+            "pages": book["num_pages"],
+            "status": "Available"
         }).insert()

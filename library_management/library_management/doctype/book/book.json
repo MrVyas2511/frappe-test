@@ -90,10 +90,11 @@
   }
  ],
  "has_web_view": 1,
+ "image_field": "image",
  "index_web_pages_for_search": 1,
  "is_published_field": "published",
  "links": [],
- "modified": "2024-07-29 12:44:33.949719",
+ "modified": "2024-07-29 19:22:38.360161",
  "modified_by": "Administrator",
  "module": "Library Management",
  "name": "Book",
