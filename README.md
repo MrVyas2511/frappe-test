@@ -11,12 +11,19 @@ mit
 Feature: 
 -> Book:
     - Add book by manuall entry
+
     - Add book from API with various search option
+
 -> Member: 
+
     - Add Member entry manually
+
     - Can create the transaction entry from member form.
+
 -> Transaction:
+
     - Create Transaction for Issue book
+
     - Close transaction on Return book
 
 
