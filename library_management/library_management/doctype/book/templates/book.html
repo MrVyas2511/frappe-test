@@ -21,9 +21,17 @@
 
 	<!-- TODO: List out all the transaction done for this book. -->
 	<h3>Transaction:</h3>
-	{% set transaction = frappe.get_list("Transaction", fields=["member", "book"], filters={"book": doc.name}) %}
+	{% set transaction = frappe.get_list("Transaction", fields=["member_name", "book", "type"], filters={"book": doc.name}) %}
 	{% for row in transaction %}
-	<div> {{ row.member }}</div>
+
+	<ol class="list-group list-group-numbered">
+		<li class="my-1 list-group-item d-flex justify-content-between align-items-start">
+		  <div class="ms-2 me-auto">
+			<div class="fw-bold">{{ row.member_name }}</div>
+		  </div>
+		  <span class="badge bg-secondary rounded-pill p-2 text-white">{{ row.type }}</span>
+		</li>
+	</ol>
 	{% endfor %}
 </div>
 

@@ -6,6 +6,7 @@
  "engine": "InnoDB",
  "field_order": [
   "member",
+  "member_name",
   "book",
   "issue_date",
   "return_date",
@@ -80,12 +81,19 @@
    "fieldtype": "Currency",
    "label": "Total fee",
    "read_only": 1
+  },
+  {
+   "fetch_from": "member.first_name",
+   "fetch_if_empty": 1,
+   "fieldname": "member_name",
+   "fieldtype": "Data",
+   "label": "Member Name"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-07-29 17:09:15.232264",
+ "modified": "2024-07-30 17:54:23.234801",
  "modified_by": "Administrator",
  "module": "Library Management",
  "name": "Transaction",
