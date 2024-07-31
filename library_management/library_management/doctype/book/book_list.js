@@ -8,13 +8,13 @@ function ButtonFunction(listview) {
                 fieldtype: 'Int',
                 placeholder: 'Enter isbn number of books to import'
             },
-			{
+            {
                 label: 'Book title',
                 fieldname: 'book_title',
                 fieldtype: 'Data',
                 placeholder: 'Enter title of books to import'
             },
-			{
+            {
                 label: 'Author',
                 fieldname: 'authors',
                 fieldtype: 'Data',
@@ -26,9 +26,9 @@ function ButtonFunction(listview) {
             frappe.call({
                 method: 'library_management.library_management.doctype.book.book.import_books_from_api',
                 args: {
-					isbn: values.isbn,
+                    isbn: values.isbn,
                     book_title: values.book_title,
-					authors: values.authors
+                    authors: values.authors
                 },
                 callback: function(response) {
                     frappe.msgprint('Books imported successfully.');
@@ -43,7 +43,7 @@ function ButtonFunction(listview) {
 
 
 frappe.listview_settings['Book'] = {
-	refresh: function(frm) {
+    refresh: function(frm) {
         frm.page.add_inner_button("Import Books", function() {
             ButtonFunction()
        });;

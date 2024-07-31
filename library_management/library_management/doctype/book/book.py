@@ -12,12 +12,12 @@ class Book(WebsiteGenerator):
 def import_books_from_api(isbn="", book_title="", authors=""):
     url = f"https://frappe.io/api/method/frappe-library"
     response = requests.get(url,
-		params={
-			'isbn':isbn,
-			'title': book_title,
-			'authors': authors
-		}
-	)
+        params={
+            'isbn':isbn,
+            'title': book_title,
+            'authors': authors
+        }
+    )
     if response.status_code == 200:
         books = response.json()["message"]
         for book in books:
